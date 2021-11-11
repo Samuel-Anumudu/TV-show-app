@@ -11,3 +11,31 @@ async function getBitcoinPrice() {
 }
 
 getBitcoinPrice();
+
+// const getDadJokes = async () => {
+//   const config = { headers: { Accept: "application/json" } };
+//   const res = await axios.get("https://icanhazdadjoke.com/", config);
+//   console.log(res.data.joke);
+// };
+
+// getDadJokes();
+
+const getElement = (selector) => {
+  const element = document.querySelector(selector);
+  if (element) return element;
+  throw Error(`Couldn't find element ${selector}`);
+};
+
+const button = getElement(".btn");
+const header = getElement(".header");
+
+button.addEventListener("click", async () => {
+  try {
+    const config = { headers: { Accept: "application/json" } };
+    const res = await axios.get("https://icanhazdadjoke.com/", config);
+    const jokes = res.data.joke;
+    header.innerHTML = `${jokes} 🤣`;
+  } catch (e) {
+    header.innerHTML = "No jokes available, sorry :( ";
+  }
+});
