@@ -31,7 +31,6 @@ fetch("https://api.cryptonator.com/api/ticker/btc-usd")
   });
 
 // Async method of fetching the same data
-
 const fetchBitcoinPrice = async () => {
   try {
     const res = await fetch("https://api.cryptonator.com/api/ticker/btc-usd");

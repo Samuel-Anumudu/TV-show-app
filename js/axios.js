@@ -12,13 +12,13 @@ async function getBitcoinPrice() {
 
 getBitcoinPrice();
 
-// const getDadJokes = async () => {
-//   const config = { headers: { Accept: "application/json" } };
-//   const res = await axios.get("https://icanhazdadjoke.com/", config);
-//   console.log(res.data.joke);
-// };
+const getDadJokes = async () => {
+  const config = { headers: { Accept: "application/json" } };
+  const res = await axios.get("https://icanhazdadjoke.com/", config);
+  console.log(res.data.joke);
+};
 
-// getDadJokes();
+getDadJokes();
 
 const getElement = (selector) => {
   const element = document.querySelector(selector);
